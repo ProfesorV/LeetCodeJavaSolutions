@@ -10,7 +10,6 @@ class H2O {
   }
 
   public void hydrogen(Runnable releaseHydrogen) throws InterruptedException {
-    // releaseHydrogen.run() outputs "H". Do not change or remove this line.
     this.hydrogen.acquire();
     releaseHydrogen.run();
     this.oxygen.release();
