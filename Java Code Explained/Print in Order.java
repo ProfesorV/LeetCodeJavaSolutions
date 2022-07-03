@@ -11,8 +11,6 @@ class Foo {
   }
 
   public void first(Runnable printFirst) throws InterruptedException {
-
-    // printFirst.run() outputs "first". Do not change or remove this line.
     synchronized (lock) {
       printFirst.run();
       this.counter.incrementAndGet();
@@ -21,7 +19,6 @@ class Foo {
   }
 
   public void second(Runnable printSecond) throws InterruptedException {
-    // printSecond.run() outputs "second". Do not change or remove this line.
     synchronized (lock) {
       while (this.counter.get() != 1) {
         this.lock.wait();
@@ -33,7 +30,6 @@ class Foo {
   }
 
   public void third(Runnable printThird) throws InterruptedException {
-    // printThird.run() outputs "third". Do not change or remove this line.
     synchronized (lock) {
       while (this.counter.get() != 2) {
         this.lock.wait();

@@ -1,12 +1,17 @@
 class DiningPhilosophers {
   
+  //List<Semaphore>
   private List<Semaphore> forks;
+  //Semaphore
   private Semaphore dinersOnTable;
+  //List<String>
   private List<String> state;
   
   public DiningPhilosophers() {
+    //set to create new ArrrayList<>
     this.forks = new ArrayList<>();
     this.state = new ArrayList<>();
+    //for condition (int < int)
     for (int i = 0; i < 5; i++) {
       this.forks.add(new Semaphore(1));
       this.state.add("idle");
@@ -14,7 +19,6 @@ class DiningPhilosophers {
     this.dinersOnTable = new Semaphore(4);
   }
 
-  // call the run() method of any runnable to execute its code
   public void wantsToEat(int philosopher,
                          Runnable pickLeftFork,
                          Runnable pickRightFork,
